@@ -66,3 +66,24 @@ ul ul a {
     padding-left: 30px !important;
     background: #6d7fcc;
 }
+
+#content {
+    width: 100%;
+    padding: 10px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+    
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+
+    #sidebarCollapse span {
+        display: none;
+    }
+}
