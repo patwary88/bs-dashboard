@@ -21,10 +21,10 @@
             </div>
             <ul class="list-unstyled components">
                 <li class="active nav-item">
-                    <a href="#homeSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">Home</a>
+                    <a href="#homeSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
                     <ul class="flex-column collapse list-unstyled" id="homeSubmenu">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home 1</a>
+                            <a class="nav-link" href="pages/home.php">Home 1</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Home 2</a>
@@ -38,7 +38,7 @@
                     <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#pageSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">Pages</a>
+                    <a href="#pageSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li class="nav-item">
                             <a class="nav-link" href="#">Page 1</a>
@@ -60,7 +60,7 @@
             </ul>
         </nav>
 
-        <div id="content">
+        <div>
             <!-- We'll fill this with dummy content -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
@@ -90,35 +90,46 @@
                     </div>
                 </div>
             </nav>
-            <h2>Collapsible Sidebar Using Bootstrap 4</h2>
+
+            <div class="container-fluid" id="content">
+                    <h2>Collapsible Sidebar Using Bootstrap 4 Collapsible Sidebar Using Bootstrap 4 Collapsible Sidebar Using Bootstrap 4</h2>
+            </div>
+            
         </div>
        
     </div>
 
-    <script
-  src="https://code.jquery.com/jquery-3.7.1.slim.js"
-  integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
     <script type="text/javascript">
          $(document).ready(function () {
+
+
              $('#sidebarCollapse').on('click', function () {
                  $('#sidebar').toggleClass('active');
              });
+
+             $("#sidebar .nav-link").on("click", function () {
+                if ($(window).width() < 768) {
+                    $('#sidebar').toggleClass('active');
+                }
+            });
+
+
+            $('#sidebar .nav-link').click(function(e){
+                e.preventDefault();
+                
+                if(this.getAttribute('href')!="#"){
+
+                    $('#content').load(this.getAttribute('href'));
+                }
+               
+            });
+
          });
 
-         $(document).ready(function () {
-    // Collapse the sidebar on link click in responsive devices
-            $("#sidebar .nav-link").on("click", function () {
-            if ($(window).width() < 992) {
-                //alert();
-                //$("#sidebar").removeClass("show");
-                $('#sidebar').toggleClass('active');
-            }
-            });
-        });
     </script>
 
 </body>
