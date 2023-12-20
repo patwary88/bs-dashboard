@@ -60,7 +60,11 @@
             </ul>
         </nav>
 
+<<<<<<< HEAD
         <div id="content">
+=======
+        <div class="container-fluid">
+>>>>>>> 48a916149fcfe0c8d30f2f1ac2764a02da1f58bd
             <!-- We'll fill this with dummy content -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
