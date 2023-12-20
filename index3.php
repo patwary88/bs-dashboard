@@ -60,15 +60,11 @@
             </ul>
         </nav>
 
-<<<<<<< HEAD
-        <div id="content">
-=======
         <div class="container-fluid">
->>>>>>> 48a916149fcfe0c8d30f2f1ac2764a02da1f58bd
             <!-- We'll fill this with dummy content -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <button type="button" id="sidebarCollapse" class="btn btn-secondary">
                         <i class="fas fa-align-left"></i>
                         <span>Toggle Sidebar</span>
                     </button>
@@ -100,9 +96,6 @@
                 
             </div>
         </div>
-        <!-- <div id="main_area">
-            <h2>Collapsible Sidebar Using Bootstrap 4 Collapsible Sidebar Using Bootstrap 4 Collapsible Sidebar Using Bootstrap 4</h2>
-        </div> -->
        
     </div>
 
@@ -111,8 +104,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
     <script type="text/javascript">
-         $(document).ready(function () {
 
+         $(document).ready(function () {
 
              $('#sidebarCollapse').on('click', function () {
                  $('#sidebar').toggleClass('active');

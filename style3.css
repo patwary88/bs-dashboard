@@ -11,7 +11,7 @@
 #sidebar {
     min-width: 220px;
     max-width: 220px;
-    background: #E7E9EB;
+    background: #F3F5F7;
     transition: all 0.3s;
 } 
 
@@ -21,12 +21,12 @@
 
 #sidebar .sidebar-header {
     padding: 10px;
-    background: #ACC9EF;
+    background: #F3F5F7;
 }
 
 #sidebar ul li a:hover {
-    color: #7386D5;
-    background: #fff;
+    color: #F3F5F7;
+    background: #7AE584;
 }
 
 #sidebar ul.components {
@@ -45,8 +45,7 @@
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
-    color: #fff;
-    background: #6d7fcc;
+    background: black;
 }
 
 a[data-bs-toggle="collapse"] {
