@@ -60,7 +60,7 @@
             </ul>
         </nav>
 
-        <div>
+        <div id="content">
             <!-- We'll fill this with dummy content -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
@@ -90,12 +90,15 @@
                     </div>
                 </div>
             </nav>
+            <div id="main_area">
 
-            <div class="container-fluid" id="content">
-                    <h2>Collapsible Sidebar Using Bootstrap 4 Collapsible Sidebar Using Bootstrap 4 Collapsible Sidebar Using Bootstrap 4</h2>
+                Collapsible Sidebar Using Bootstrap 4 Collapsible Sidebar Using Bootstrap 4 Collapsible Sidebar Using Bootstrap 4
+                
             </div>
-            
         </div>
+        <!-- <div id="main_area">
+            <h2>Collapsible Sidebar Using Bootstrap 4 Collapsible Sidebar Using Bootstrap 4 Collapsible Sidebar Using Bootstrap 4</h2>
+        </div> -->
        
     </div>
 
@@ -123,7 +126,7 @@
                 
                 if(this.getAttribute('href')!="#"){
 
-                    $('#content').load(this.getAttribute('href'));
+                    $('#main_area').load(this.getAttribute('href'));
                 }
                
             });

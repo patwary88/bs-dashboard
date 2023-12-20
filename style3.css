@@ -74,6 +74,13 @@ ul ul a {
     transition: all 0.3s;
 }
 
+#main_area {
+    width: 100%;
+    padding: 10px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
 @media (max-width: 768px) {
     
     #sidebar {
