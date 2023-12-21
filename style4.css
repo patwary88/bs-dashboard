@@ -70,6 +70,13 @@ ul ul a {
     background: #6d7fcc;
 }
 
+.top_nav ul li a:hover {
+    color: #F3F5F7;
+    background: #7AE584;
+}
+
+
+
 #content {
     width: 100%;
     padding: 10px;
@@ -84,6 +91,10 @@ ul ul a {
     transition: all 0.3s;
 }
 
+/* #sidebarCollapse .navbar-toggler-icon {
+    display: none;
+} */
+
 @media (max-width: 768px) {
     
     #sidebar {
@@ -93,7 +104,7 @@ ul ul a {
         margin-left: 0;
     }
 
-    #sidebarCollapse span {
+    /* #sidebarCollapse .responsive {
         display: none;
-    }
+    } */
 }
