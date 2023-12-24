@@ -20,7 +20,7 @@
                 <h4>Bootstrap Sidebar</h4>
             </div>
             <ul class="list-unstyled components">
-                <li class="active nav-item">
+                <li class="active">
                     <a href="#homeSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
                     <ul class="flex-column collapse list-unstyled" id="homeSubmenu">
                         <li class="nav-item">
@@ -108,17 +108,19 @@
 
          $(document).ready(function () {
 
+            //Toggle button for open full screen.
              $('#sidebarCollapse').on('click', function () {
                  $('#sidebar').toggleClass('active');
              });
 
+             //mobile device sidebar menu close
              $("#sidebar .nav-link").on("click", function () {
                 if ($(window).width() < 768) {
                     $('#sidebar').toggleClass('active');
                 }
             });
 
-
+            // load content page for target div in index page
             $('#sidebar .nav-link').click(function(e){
                 e.preventDefault();
                 
@@ -129,7 +131,47 @@
                
             });
 
+            // $("a").on("click", function() {
+            //    // $(this).addClass("active");
+            //     $('.nav-link').css('background-color', 'red');
+            // });
+
+            $(document).ready(function () {
+                $(".nav-item").click(function (e) {
+                    e.preventDefault();
+                    $(this).toggleClass("active");
+                    console.log();
+                });
+            });
+
+            // var url = window.location;
+            // console.log(url);
+
          });
+
+        //  $(document).ready(function () {
+        //     $('.nav-item li a').click(function(e) {
+
+        //         $('.nav li.active').removeClass('active');
+
+        //         var $parent = $(this).parent();
+        //         $parent.addClass('active');
+        //         e.preventDefault();
+        //     });
+        // });
+
+        // $(document).ready(function () {
+        //     var url = window.location;
+        // // Will only work if string in href matches with location
+        //     $('ul li a[href="' + url + '"]').parent().addClass('active');
+
+        // // Will also work for relative and absolute hrefs
+        //     // $('ul li a').filter(function () {
+        //     //     return this.href == url;
+        //     // }).parent().addClass('active').parent().parent().addClass('active');
+        // });  
+
+
 
     </script>
 
