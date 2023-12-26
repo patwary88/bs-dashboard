@@ -20,7 +20,7 @@
                 <h4>Bootstrap Sidebar</h4>
             </div>
             <ul class="list-unstyled components">
-                <li class="active">
+                <li class="nav-item">
                     <a href="#homeSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
                     <ul class="flex-column collapse list-unstyled" id="homeSubmenu">
                         <li class="nav-item">
@@ -76,16 +76,16 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Page</a>
+                                <a class="nav-link" href="#">Page 1</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
+                                <a class="nav-link" href="#">Page 2</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
+                                <a class="nav-link" href="#">Page 3</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
+                                <a class="nav-link" href="#">Page 4</a>
                             </li>
                         </ul>
                     </div>
@@ -131,47 +131,53 @@
                
             });
 
-            // $("a").on("click", function() {
-            //    // $(this).addClass("active");
-            //     $('.nav-link').css('background-color', 'red');
-            // });
+            // Add a click event handler to anchor elements inside the navbar
+            $('nav .nav-item').click(function (e) {
 
-            $(document).ready(function () {
-                $(".nav-item").click(function (e) {
-                    e.preventDefault();
-                    $(this).toggleClass("active");
-                    console.log();
-                });
+                e.preventDefault();
+                // Remove the 'active' class from all anchor elements
+                $('nav .nav-item').removeClass('active');
+                // Add the 'active' class to the clicked anchor element
+                $(this).addClass('active');
+
             });
 
-            // var url = window.location;
-            // console.log(url);
+            $('#sidebar [id]').each(function () {
+                // Get the id attribute of each element
+                var elementId = $(this).attr('id');
+
+                // Log the id to the console (you can perform other actions as needed)
+               // console.log("Element ID: " + elementId);
+
+               $('#'+elementId+ ' .nav-item').click(function (e) {
+                    e.stopPropagation(); // Prevent the click event from propagating to the parent li
+                    // Remove the 'active' class from all dynamic dropdown anchor elements
+                    $('#'+elementId+ ' .nav-item').removeClass('active');
+
+                    // Add the 'active' class to the clicked anchor element in the dynamic dropdown
+                    $(this).addClass('active');
+                });
+
+            });
+
+
+            $('.top_nav .nav-item').click(function (e) {
+
+                e.preventDefault();
+                console.log($(this));
+                // Remove the 'active' class from all anchor elements
+                $('top_nav .nav-item').removeClass('active');
+                // Add the 'active' class to the clicked anchor element
+                $(this).addClass('active').css({'background-color':'yellow'});
+                
+                //$(this).css({'background-color':'yellow'});
+
+               // $('.active').css({'background-color':'yellow'});
+            });
+
+
 
          });
-
-        //  $(document).ready(function () {
-        //     $('.nav-item li a').click(function(e) {
-
-        //         $('.nav li.active').removeClass('active');
-
-        //         var $parent = $(this).parent();
-        //         $parent.addClass('active');
-        //         e.preventDefault();
-        //     });
-        // });
-
-        // $(document).ready(function () {
-        //     var url = window.location;
-        // // Will only work if string in href matches with location
-        //     $('ul li a[href="' + url + '"]').parent().addClass('active');
-
-        // // Will also work for relative and absolute hrefs
-        //     // $('ul li a').filter(function () {
-        //     //     return this.href == url;
-        //     // }).parent().addClass('active').parent().parent().addClass('active');
-        // });  
-
-
 
     </script>
 
