@@ -84,8 +84,20 @@ ul ul a {
     transition: all 0.3s;
 }
 
-/* #sidebarCollapse .navbar-toggler-icon {
-    display: none;
+/* 
+for mobile top navigation var
+} */
+
+#navbarSupportedContent .nav-link.active {
+    background-color: #7AE584; /* Set your desired background color */
+    color: #ffffff; /* Set your desired text color */
+}
+
+
+
+
+/* 
+for mobile view style
 } */
 
 @media (max-width: 768px) {

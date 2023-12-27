@@ -62,12 +62,10 @@
 
         <div class="container-fluid">
             <!-- We'll fill this with dummy content -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light top_nav">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" id="top_nav">
                 <div class="container-fluid">
                     <button type="button" id="sidebarCollapse" class="btn btn-outline-success btn-sm">
                         <span class="navbar-toggler-icon"></span>
-                        <!-- <span class="responsive">Toggle Sidebar</span> -->
-                        
                     </button>
                     <button class="btn btn-outline-success d-inline-block d-lg-none ml-auto btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -160,21 +158,30 @@
 
             });
 
+            // set top navigation background color when click link
 
-            $('.top_nav .nav-item').click(function (e) {
-
-                e.preventDefault();
-                console.log($(this));
-                // Remove the 'active' class from all anchor elements
-                $('top_nav .nav-item').removeClass('active');
-                // Add the 'active' class to the clicked anchor element
-                $(this).addClass('active').css({'background-color':'yellow'});
+            $('#navbarSupportedContent .nav-link').click(function (e) {
+                e.preventDefault(); // Prevent the default link behavior
                 
-                //$(this).css({'background-color':'yellow'});
+                // Remove active class from all links
+                $('.nav-link').removeClass('active');
 
-               // $('.active').css({'background-color':'yellow'});
+                // Add active class to the clicked link
+                $(this).addClass('active');
             });
 
+                        //mobile device top navigation menu close
+            // $("#top_nav .nav-link").on("click", function () {
+            //     if ($(window).width() < 768) {
+            //         $('#top_nav').toggleClass('active');
+            //     }
+            // });
+
+            $('#top_nav a').on('click', function () {
+                if ($(window).width() < 768) {
+                    $('#navbarSupportedContent').collapse('hide');
+                }
+            });
 
 
          });
