@@ -20,7 +20,7 @@
                 <h4>Bootstrap Sidebar</h4>
             </div>
             <ul class="list-unstyled components">
-                <li class="nav-item">
+                <li class="nav-item dropdown">
                     <a href="#homeSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
                     <ul class="flex-column collapse list-unstyled" id="homeSubmenu">
                         <li class="nav-item">
@@ -37,14 +37,26 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item dropdown">
                     <a href="#pageSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li class="nav-item">
                             <a class="nav-link" href="#">Page 1</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Page 2</a>
+                        <li class="nav-item dropdown">
+                            <!-- <a class="nav-link" href="#">Page 2</a> -->
+                            <a href="#homeSubmenu2" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                            <ul class="flex-column collapse list-unstyled" id="homeSubmenu2">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="pages/home.php">Home 1</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Home 2</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Home 3</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Page 3</a>
@@ -170,21 +182,29 @@
                 $(this).addClass('active');
             });
 
-                        //mobile device top navigation menu close
-            // $("#top_nav .nav-link").on("click", function () {
-            //     if ($(window).width() < 768) {
-            //         $('#top_nav').toggleClass('active');
-            //     }
-            // });
-
+            //mobile device top navigation menu close
             $('#top_nav a').on('click', function () {
                 if ($(window).width() < 768) {
                     $('#navbarSupportedContent').collapse('hide');
                 }
             });
 
-
          });
+
+          // Enable Bootstrap dropdown on hover
+        $(document).ready(function() {
+            $('#sidebar .nav-item.dropdown').hover(
+
+                function() {
+                    $(this).find('.collapse').addClass('show');
+                },
+                function() {
+                    $(this).find('.collapse').removeClass('show');
+                }
+
+            );
+        });
+
 
     </script>
 
