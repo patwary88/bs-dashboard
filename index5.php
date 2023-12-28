@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="style4.css">
+    <link rel="stylesheet" href="assets/css/core/layout.css">
 
 </head>
 
@@ -102,111 +102,17 @@
                 </div>
             </nav>
             <div id="main_area">
-
-                Collapsible Sidebar Using Bootstrap 4 Collapsible Sidebar Using Bootstrap 4 Collapsible Sidebar Using Bootstrap 4
                 
             </div>
         </div>
-       
+        
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-    <script type="text/javascript">
-
-         $(document).ready(function () {
-
-            //Toggle button for open full screen.
-             $('#sidebarCollapse').on('click', function () {
-                 $('#sidebar').toggleClass('active');
-             });
-
-             //mobile device sidebar menu close
-             $("#sidebar .nav-link").on("click", function () {
-                if ($(window).width() < 768) {
-                    $('#sidebar').toggleClass('active');
-                }
-            });
-
-            // load content page for target div in index page
-            $('#sidebar .nav-link').click(function(e){
-                e.preventDefault();
-                
-                if(this.getAttribute('href')!="#"){
-
-                    $('#main_area').load(this.getAttribute('href'));
-                }
-               
-            });
-
-            // Add a click event handler to anchor elements inside the navbar
-            $('nav .nav-item').click(function (e) {
-
-                e.preventDefault();
-                // Remove the 'active' class from all anchor elements
-                $('nav .nav-item').removeClass('active');
-                // Add the 'active' class to the clicked anchor element
-                $(this).addClass('active');
-
-            });
-
-            $('#sidebar [id]').each(function () {
-                // Get the id attribute of each element
-                var elementId = $(this).attr('id');
-
-                // Log the id to the console (you can perform other actions as needed)
-               // console.log("Element ID: " + elementId);
-
-               $('#'+elementId+ ' .nav-item').click(function (e) {
-                    e.stopPropagation(); // Prevent the click event from propagating to the parent li
-                    // Remove the 'active' class from all dynamic dropdown anchor elements
-                    $('#'+elementId+ ' .nav-item').removeClass('active');
-
-                    // Add the 'active' class to the clicked anchor element in the dynamic dropdown
-                    $(this).addClass('active');
-                });
-
-            });
-
-            // set top navigation background color when click link
-
-            $('#navbarSupportedContent .nav-link').click(function (e) {
-                e.preventDefault(); // Prevent the default link behavior
-                
-                // Remove active class from all links
-                $('.nav-link').removeClass('active');
-
-                // Add active class to the clicked link
-                $(this).addClass('active');
-            });
-
-            //mobile device top navigation menu close
-            $('#top_nav a').on('click', function () {
-                if ($(window).width() < 768) {
-                    $('#navbarSupportedContent').collapse('hide');
-                }
-            });
-
-         });
-
-          // Enable Bootstrap dropdown on hover
-        $(document).ready(function() {
-            $('#sidebar .nav-item.dropdown').hover(
-
-                function() {
-                    $(this).find('.collapse').addClass('show');
-                },
-                function() {
-                    $(this).find('.collapse').removeClass('show');
-                }
-
-            );
-        });
-
-
-    </script>
+    <script type="text/javascript" src="assets/js/core/layout.js"></script>
 
 </body>
 
