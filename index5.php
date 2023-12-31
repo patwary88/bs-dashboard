@@ -101,9 +101,7 @@
                     </div>
                 </div>
             </nav>
-            <div id="main_area">
-                
-            </div>
+            <div id="main_area"></div>
         </div>
         
     </div>

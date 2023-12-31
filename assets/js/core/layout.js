@@ -11,6 +11,12 @@ $(document).ready(function () {
         
         if(this.getAttribute('href')!="#"){
 
+            // if ($(window).width() < 768) {
+    
+            //     $("input").removeClass('form-control').addClass('form-control form-control-sm');
+            
+            // }
+
             $('#main_area').load(this.getAttribute('href'));
         }
        
@@ -96,17 +102,16 @@ $(document).ready(function () {
                 $('#navbarSupportedContent').collapse('hide');
     
         });
+
+
+        //if ($(window).width() < 768) {
+    
+           // $("#main_area :input").removeClass('form-control').addClass('form-control form-control-sm');
+        
+        //}
+        $("#main_area form[input]").removeClass('form-control').addClass('form-control form-control-sm');
+
     }
 
-
-    // if ($(window).width() < 768) {
-    
-    //     //$("form").removeClass('form-control').addClass('form-control form-control-sm');
-    //   // alert();
-    //     var inputGroups = $('.input-group');
-    //     console.log(inputGroups);
-    
-    // }
-
-
  });
+
