@@ -62,15 +62,16 @@
   </div>
   <div class="row">
     <div class="col input-group mb-2">
-      <span class="input-group-text" id="inputGroup-sizing-sm">Blood Group </span>
-      <!-- <input type="text" id="cbo_blood_group_id" name="cbo_blood_group_id" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"> -->
-      <select class="form-select" data-live-search="true" id="cbo_blood_group_id">
-        <option>Option 1</option>
-        <option>Option 2</option>
-        <option>Option 3</option>
-        <option>Option 4</option>
-        <option>Option 5</option>
+      <div class="input-group-prepend">
+        <span class="input-group-text">Blood group</span>
+      </div>
+      <select class="selectpicker">
+        <option>Mustard</option>
+        <option>Ketchup</option>
+        <option>Barbecue</option>
       </select>
+
+
 
     </div>
     <div class="col input-group mb-2">
@@ -84,5 +85,5 @@
   </div>
 </form>
 <script>
-  
+ $('.my-select').selectpicker();
 </script>

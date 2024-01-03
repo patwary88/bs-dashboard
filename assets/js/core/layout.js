@@ -119,6 +119,4 @@ $(document).ready(function () {
       window.addEventListener('resize', updateInputGroupClass);
     }
 
-    $('.cbo_blood_group_id').selectpicker();
-
  });
