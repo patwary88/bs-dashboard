@@ -1,3 +1,8 @@
+    // Function to check if the screen width is below a certain threshold (e.g., 576 pixels)
+function isMobile() {
+    return window.innerWidth < 660;
+}
+
 $(document).ready(function () {
 
     //Toggle button for open full screen.
@@ -10,13 +15,6 @@ $(document).ready(function () {
         e.preventDefault();
         
         if(this.getAttribute('href')!="#"){
-
-            // if ($(window).width() < 768) {
-    
-            //     $("input").removeClass('form-control').addClass('form-control form-control-sm');
-            
-            // }
-
             $('#main_area').load(this.getAttribute('href'));
         }
        
@@ -88,7 +86,7 @@ $(document).ready(function () {
 
 
     // for mobile device on ready function effect
-    if ($(window).width() < 768) {
+    if (isMobile()) {
         //mobile device sidebar menu close
         $("#sidebar .nav-link").on("click", function () {
             
@@ -102,16 +100,23 @@ $(document).ready(function () {
                 $('#navbarSupportedContent').collapse('hide');
     
         });
-
-
-        //if ($(window).width() < 768) {
+        // Function to apply the input-group-sm class to all elements with class "input-group" based on screen width
+        function updateInputGroupClass() {
+            var inputGroups = document.querySelectorAll('.input-group');
     
-           // $("#main_area :input").removeClass('form-control').addClass('form-control form-control-sm');
-        
-        //}
-        $("#main_area form[input]").removeClass('form-control').addClass('form-control form-control-sm');
+            inputGroups.forEach(function(inputGroup) {
+            if (isMobile()) {
+                inputGroup.classList.add('input-group-sm');
+            } else {
+                inputGroup.classList.remove('input-group-sm');
+            }
+            });
+        }
 
+      // Initial check on page load
+      updateInputGroupClass();
+      // Update the class when the window is resized
+      window.addEventListener('resize', updateInputGroupClass);
     }
 
  });
-
