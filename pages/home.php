@@ -7,8 +7,21 @@
 </script>
 
 
-<h2>Multiple Inputs and Helpers</h2>
-<p>Add multiple inputs or addons:</p>
+<h2>Employee Profile Information</h2>
+
+<!-- <ul class="nav nav-tabs mb-2" id="myTabs">
+
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile">Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact">Contact</a>
+  </li>
+
+</ul> -->
 
 <!-- Multiple inputs -->
 <form id="emp_basic" autocomplete="off">
@@ -70,8 +83,8 @@
   </div>
   <div class="row">
     <div class="col-sm-12 col-md-6 col-lg input-group mb-2">
-      <label class="input-group-text" for="inputGroupSelect01">Blood Group</label>
-      <select id="cbo_bloodgroup_id" data-live-search="true" multiple data-actions-box="true" class="form-control">
+      <label class="input-group-text" for="cbo_bloodgroup_id">Blood Group</label>
+      <select id="cbo_bloodgroup_id" name="cbo_bloodgroup_id" data-live-search="true" multiple data-actions-box="true" class="form-control">
         <option selected>Choose...</option>
         <option value="1">One</option>
         <option value="2">Two</option>
@@ -104,8 +117,8 @@
   </div>
   <div class="row">
     <div class="col-sm-12 col-md-6 col-lg input-group mb-2">
-    <label class="input-group-text" for="inputGroupSelect01">Marital Status</label>
-      <select id="cbo_marital_status" data-live-search="true" class="form-control">
+    <label class="input-group-text" for="cbo_marital_status">Marital Status</label>
+      <select id="cbo_marital_status" name="cbo_marital_status" data-live-search="true" class="form-control">
         <option selected>Choose...</option>
         <option value="1">One</option>
         <option value="2">Two</option>
@@ -124,8 +137,8 @@
 
   <div class="row">
     <div class="col-sm-12 col-md-6 col-lg input-group mb-2">
-    <label class="input-group-text" for="inputGroupSelect01">Category</label>
-      <select id="cbo_category_id" data-live-search="true" class="form-control">
+    <label class="input-group-text" for="cbo_category_id">Category</label>
+      <select id="cbo_category_id" name="cbo_category_id" data-live-search="true" class="form-control">
         <option selected>Choose...</option>
         <option value="1">One</option>
         <option value="2">Two</option>
@@ -133,8 +146,8 @@
       </select>
     </div>
     <div class="col-sm-12 col-md-6 col-lg input-group mb-2">
-    <label class="input-group-text" for="inputGroupSelect01">Company</label>
-      <select id="cbo_company_id" data-live-search="true" class="form-control">
+    <label class="input-group-text" for="cbo_company_id">Company</label>
+      <select id="cbo_company_id" name="cbo_company_id" data-live-search="true" class="form-control">
         <option selected>Choose...</option>
         <option value="1">One</option>
         <option value="2">Two</option>
@@ -142,37 +155,8 @@
       </select>
     </div>
     <div class="col-sm-12 col-md-6 col-lg input-group mb-2">
-    <label class="input-group-text" for="inputGroupSelect01">Location</label>
-      <select id="cbo_location_id" data-live-search="true" class="form-control">
-        <option selected>Choose...</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12 col-md-6 col-lg input-group mb-2">
-    <label class="input-group-text" for="inputGroupSelect01">Division</label>
-      <select id="cbo_division_id" data-live-search="true" class="form-control">
-        <option selected>Choose...</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-    </div>
-    <div class="col-sm-12 col-md-6 col-lg input-group mb-2">
-    <label class="input-group-text" for="inputGroupSelect01">Department</label>
-      <select id="cbo_department_id" data-live-search="true" class="form-control">
-        <option selected>Choose...</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-    </div>
-    <div class="col-sm-12 col-md-6 col-lg input-group mb-2">
-    <label class="input-group-text" for="inputGroupSelect01">Section</label>
-      <select id="cbo_section_id" data-live-search="true" class="form-control">
+    <label class="input-group-text" for="cbo_location_id">Location</label>
+      <select id="cbo_location_id" name="cbo_location_id" data-live-search="true" class="form-control">
         <option selected>Choose...</option>
         <option value="1">One</option>
         <option value="2">Two</option>
@@ -182,8 +166,8 @@
   </div>
   <div class="row">
     <div class="col-sm-12 col-md-6 col-lg input-group mb-2">
-    <label class="input-group-text" for="inputGroupSelect01">Subsection</label>
-      <select id="cbo_subsection_id" data-live-search="true" class="form-control">
+    <label class="input-group-text" for="cbo_division_id">Division</label>
+      <select id="cbo_division_id" name="cbo_division_id" data-live-search="true" class="form-control">
         <option selected>Choose...</option>
         <option value="1">One</option>
         <option value="2">Two</option>
@@ -191,8 +175,8 @@
       </select>
     </div>
     <div class="col-sm-12 col-md-6 col-lg input-group mb-2">
-    <label class="input-group-text" for="inputGroupSelect01">Designation Level</label>
-      <select id="cbo_designation_level_id" data-live-search="true" class="form-control">
+    <label class="input-group-text" for="cbo_department_id">Department</label>
+      <select id="cbo_department_id" name="cbo_department_id" data-live-search="true" class="form-control">
         <option selected>Choose...</option>
         <option value="1">One</option>
         <option value="2">Two</option>
@@ -200,8 +184,37 @@
       </select>
     </div>
     <div class="col-sm-12 col-md-6 col-lg input-group mb-2">
-    <label class="input-group-text" for="inputGroupSelect01">Designation</label>
-      <select id="cbo_designation_id" data-live-search="true" class="form-control">
+    <label class="input-group-text" for="cbo_section_id">Section</label>
+      <select id="cbo_section_id" name="cbo_section_id" data-live-search="true" class="form-control">
+        <option selected>Choose...</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg input-group mb-2">
+    <label class="input-group-text" for="cbo_subsection_id">Subsection</label>
+      <select id="cbo_subsection_id" name="cbo_subsection_id" data-live-search="true" class="form-control">
+        <option selected>Choose...</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg input-group mb-2">
+    <label class="input-group-text" for="cbo_designation_level_id">Designation Level</label>
+      <select id="cbo_designation_level_id" name="cbo_designation_level_id" data-live-search="true" class="form-control">
+        <option selected>Choose...</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg input-group mb-2">
+    <label class="input-group-text" for="cbo_designation_id">Designation</label>
+      <select id="cbo_designation_id" name="cbo_designation_id" data-live-search="true" class="form-control">
         <option selected>Choose...</option>
         <option value="1">One</option>
         <option value="2">Two</option>
