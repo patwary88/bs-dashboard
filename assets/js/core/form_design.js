@@ -19,3 +19,26 @@ updateInputGroupClass();
 window.addEventListener('resize', updateInputGroupClass);
 
 // end apply input-group-sm for mobile screen;
+
+
+// check data-live-search attribute exist in select element
+
+var attr = $(this).attr('data-live-search');
+
+
+$('form select').each(
+    function(index){  
+
+        let attr = $(this).attr('data-live-search');
+
+       // console.log($(this));
+
+        if (typeof attr !== 'undefined' && attr !== false) {
+
+             $('input[type="search"]').attr('id','test'+index);
+             $('input[type="search"]').attr('name','test'+index);
+           
+        }
+    }
+);
+

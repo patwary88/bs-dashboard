@@ -84,7 +84,7 @@
   <div class="row">
     <div class="col-sm-12 col-md-6 col-lg input-group mb-2">
       <label class="input-group-text" for="cbo_bloodgroup_id">Blood Group</label>
-      <select id="cbo_bloodgroup_id" name="cbo_bloodgroup_id" data-live-search="true" multiple data-actions-box="true" class="form-control">
+      <select id="cbo_bloodgroup_id" name="cbo_bloodgroup_id" data-live-search="true" data-actions-box="true" class="form-control" multiple>
         <option selected>Choose...</option>
         <option value="1">One</option>
         <option value="2">Two</option>
@@ -101,7 +101,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-sm-12 col-md-6 col-lg input-group mb-2">
       <span class="input-group-text" id="inputGroup-sizing-sm">National ID</span>
       <input type="text" id="txt_national_id" name="txt_national_id" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
@@ -221,13 +221,18 @@
         <option value="3">Three</option>
       </select>
     </div>
-  </div>
+  </div> -->
 
   <div class="row">
     <input class="btn btn-outline-secondary" type="button" value="Save" onclick="func_emp_basic();">
   </div>
 </form>
-<script type="text/javascript" src="./assets/js/core/form_design.js"></script>
+
+  <script>
+        var url = "./assets/js/core/form_design.js";
+        $.getScript(url);
+  </script>
+
 <script>
   $('#cbo_bloodgroup_id').selectpicker();
   $('#cbo_marital_status').selectpicker();
