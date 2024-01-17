@@ -23,9 +23,6 @@ window.addEventListener('resize', updateInputGroupClass);
 
 // check data-live-search attribute exist in select element
 
-var attr = $(this).attr('data-live-search');
-
-
 $('form select').each(
     function(index){  
 
@@ -35,8 +32,8 @@ $('form select').each(
 
         if (typeof attr !== 'undefined' && attr !== false) {
 
-             $('input[type="search"]').attr('id','test'+index);
-             $('input[type="search"]').attr('name','test'+index);
+             $('input[type="search"]').attr('id','cbo_bloodgroup_id');
+             $('input[type="search"]').attr('name','cbo_bloodgroup_id');
            
         }
     }
