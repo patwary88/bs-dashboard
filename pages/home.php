@@ -101,7 +101,7 @@
     </div>
   </div>
 
-  <!-- <div class="row">
+ <div class="row">
     <div class="col-sm-12 col-md-6 col-lg input-group mb-2">
       <span class="input-group-text" id="inputGroup-sizing-sm">National ID</span>
       <input type="text" id="txt_national_id" name="txt_national_id" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
@@ -135,7 +135,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <!--  <div class="row">
     <div class="col-sm-12 col-md-6 col-lg input-group mb-2">
     <label class="input-group-text" for="cbo_category_id">Category</label>
       <select id="cbo_category_id" name="cbo_category_id" data-live-search="true" class="form-control">
@@ -234,15 +234,22 @@
   </script>
 
 <script>
-  $('#cbo_bloodgroup_id').selectpicker();
-  $('#cbo_marital_status').selectpicker();
-  $('#cbo_category_id').selectpicker();
-  $('#cbo_company_id').selectpicker();
-  $('#cbo_location_id').selectpicker();
-  $('#cbo_division_id').selectpicker();
-  $('#cbo_department_id').selectpicker();
-  $('#cbo_section_id').selectpicker();
-  $('#cbo_subsection_id').selectpicker();
-  $('#cbo_designation_level_id').selectpicker();
-  $('#cbo_designation_id').selectpicker();
+
+  $(document).ready(function () {
+     $('#cbo_bloodgroup_id').selectpicker();
+     $('#cbo_marital_status').selectpicker();
+    // $('#cbo_category_id').selectpicker();
+    // $('#cbo_company_id').selectpicker();
+    // $('#cbo_location_id').selectpicker();
+    // $('#cbo_division_id').selectpicker();
+    // $('#cbo_department_id').selectpicker();
+    // $('#cbo_section_id').selectpicker();
+    // $('#cbo_subsection_id').selectpicker();
+    // $('#cbo_designation_level_id').selectpicker();
+    // $('#cbo_designation_id').selectpicker();
+  });
+
+  
+  
+  
 </script>

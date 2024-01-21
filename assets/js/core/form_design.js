@@ -24,16 +24,23 @@ window.addEventListener('resize', updateInputGroupClass);
 // check data-live-search attribute exist in select element
 
 $('form select').each(
-    function(index){  
+    function(index, element){  
 
         let attr = $(this).attr('data-live-search');
 
-       // console.log($(this));
+        let formIndex = $(this).closest('form').index();
+        $('input[type="search"]').attr('id', 'search_box_id_' + formIndex + '_' + index);
+       
 
         if (typeof attr !== 'undefined' && attr !== false) {
 
-             $('input[type="search"]').attr('id','cbo_bloodgroup_id');
-             $('input[type="search"]').attr('name','cbo_bloodgroup_id');
+            // let formIndex = $(this).closest('form').index();
+            // $('input[type="search"]').attr('id', 'search_box_id_' + formIndex + '_' + index);
+            //console.log(formIndex);
+            // let search_id = element.id;
+            // $('input[type="search"]').attr('id','search_box_id_'+index);
+            // $('input[type="search"]').attr('id','search_box_id_'+indexid).removeAttr("id");
+             //$('input[type="search"]').attr('name','search_box_id'+indexid);
            
         }
     }
