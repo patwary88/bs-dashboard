@@ -29,11 +29,11 @@ $('form select').each(
         let attr = $(this).attr('data-live-search');
 
         let formIndex = $(this).closest('form').index();
-        $('input[type="search"]').attr('id', 'search_box_id_' + formIndex + '_' + index);
+        
        
 
         if (typeof attr !== 'undefined' && attr !== false) {
-
+            //$('input[type="search"]').attr('id', 'search_box_id_' + formIndex + '_' + index);
             // let formIndex = $(this).closest('form').index();
             // $('input[type="search"]').attr('id', 'search_box_id_' + formIndex + '_' + index);
             //console.log(formIndex);
@@ -46,3 +46,16 @@ $('form select').each(
     }
 );
 
+function loadTabContent(tabId, contentUrl) {
+    $.ajax({
+      url: contentUrl,
+      type: 'GET',
+      success: function(response) {
+        // Replace the content of the div with the fetched content
+        $('#main_area').html(response);
+      },
+      error: function(error) {
+        console.error('Error loading tab content:', error);
+      }
+    });
+  }
