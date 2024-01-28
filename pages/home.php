@@ -7,14 +7,18 @@
 
   function func_emp_modal_info(){
 
-            $.ajax({
-                url: 'pages/employee_modal_data.php',
-                type: 'GET',
-                data: {bar: '1'},
-                success: function (result) {
-                    //alert('success');
-                }
-            });
+    $.ajax({
+            url: 'pages/employee_modal_data.php',
+            type: 'GET',
+            data: { bar: '1' },
+            success: function (result) {
+                $("#txt_emp_code").html(result);
+                $("#txt_emp_code").modal("show"); // Open the modal
+            },
+            error: function (xhr, status, error) {
+                console.error("Error: ", error);
+            }
+        });
   }
 
 </script>
