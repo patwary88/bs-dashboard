@@ -5,23 +5,53 @@
 
   }
 
-  function func_emp_modal_info(){
+      function func_emp_modal_info(object){
+          //console.log(object.id);
+          $('#'+object.id).attr('data-bs-toggle', 'modal');
+          $('#'+object.id).attr('data-bs-target', '#exampleModal');
+            let fname = 'Main';
+            let lname = 'Uddin';
+            let dataset = 'fname='+fname+'&lname='+lname+'&id='+object.id;
+            $.ajax({
 
-    $.ajax({
-            url: 'pages/employee_modal_data.php',
-            type: 'GET',
-            data: { bar: '1' },
-            success: function (result) {
-                $("#txt_emp_code").html(result);
-                $("#txt_emp_code").modal("show"); // Open the modal
+            type: "POST",
+            url: "pages/employee_modal_data.php",
+            data: dataset,
+            success: function (response) {
+              console.log(response)
+              $('#studentaddmodal').modal('hide')
+              //alert("data saved");
+
+               //$('#'+object.id).attr('data-bs-toggle', 'modal');
+              // $('#'+object.id).attr('data-bs-target', '#exampleModal');
             },
-            error: function (xhr, status, error) {
-                console.error("Error: ", error);
+            error: function(error) {
+              //console.log(error)
+              //alert("Data not saved");
             }
         });
-  }
 
+        //   $.ajax({
+
+        //     type: "POST",
+        //     url: "/addstudent",
+        //     data: $('#addform').serialize(),
+        //     success: function (response) {
+        //       console.log(response)
+        //       $('#studentaddmodal').modal('hide')
+        //       alert("data saved");
+        //     },
+        //     error: function(error) {
+        //       console.log(error)
+        //       alert("Data not saved");
+        //     }
+        // });
+
+
+
+      }
 </script>
+
 
 
 <h2>Employee Profile Information</h2>
@@ -45,7 +75,7 @@
     <div class="row">
       <div class="col-sm-12 col-md-6 col-lg input-group mb-2">
         <span class="input-group-text" id="inputGroup-sizing-sm">Emp Code</span>
-        <input type="text" id="txt_emp_code" name="txt_emp_code" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" onclick="func_emp_modal_info();">
+        <input type="text" id="txt_emp_code" name="txt_emp_code" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" onclick="func_emp_modal_info(this);">
       </div>
       <div class="col-sm-12 col-md-6 col-lg input-group mb-2">
         <span class="input-group-text" id="inputGroup-sizing-default">Card No</span>
