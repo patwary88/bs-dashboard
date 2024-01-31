@@ -69,14 +69,18 @@
       let popurl = 'pages/employee_modal_data.php';
       //$('#exampleModal').modal('show').find('.modal-content').load(popurl);
       $('#exampleModal').modal('show').find('.modal-dialog').load(popurl);
+      
     });
+
+    $('#exampleModal').on('hidden.bs.modal', function () {
+      $('#txt_emp_code').val($('#abc').val());
+     // alert('hello');
+    })
 </script>
 
 
 <div id="exampleModal" class="modal fade text-center">
-    <div class="modal-dialog">
-      <!-- <div class="modal-content">
-      </div> -->
+    <div class="modal-dialog modal-fullscreen">
     </div>
 </div>
 
