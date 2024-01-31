@@ -5,54 +5,80 @@
 
   }
 
-      function func_emp_modal_info(object){
-          //console.log(object.id);
-          $('#'+object.id).attr('data-bs-toggle', 'modal');
-          $('#'+object.id).attr('data-bs-target', '#exampleModal');
-            let fname = 'Main';
-            let lname = 'Uddin';
-            let dataset = 'fname='+fname+'&lname='+lname+'&id='+object.id;
-            $.ajax({
+      // function func_emp_modal_info(object){
+      //     //console.log(object.id);
+      //    // $('#'+object.id).attr('data-bs-toggle', 'modal');
+      //    // $('#'+object.id).attr('data-bs-target', '#exampleModal');
+      //       let fname = 'Main';
+      //       let lname = 'Uddin';
+      //       let dataset = 'fname='+fname+'&lname='+lname+'&id='+object.id;
+      //       $.ajax({
 
-            type: "POST",
-            url: "pages/employee_modal_data.php",
-            data: dataset,
-            success: function (response) {
-              console.log(response)
-              $('#studentaddmodal').modal('hide')
-              //alert("data saved");
+      //       type: "POST",
+      //       url: "pages/employee_modal_data.php",
+      //       data: dataset,
+      //       success: function (response) {
+      //         console.log(response)
+      //         $('#exampleModal').modal('hide')
+      //         //alert("data saved");
 
-               //$('#'+object.id).attr('data-bs-toggle', 'modal');
-              // $('#'+object.id).attr('data-bs-target', '#exampleModal');
-            },
-            error: function(error) {
-              //console.log(error)
-              //alert("Data not saved");
-            }
-        });
-
-        //   $.ajax({
-
-        //     type: "POST",
-        //     url: "/addstudent",
-        //     data: $('#addform').serialize(),
-        //     success: function (response) {
-        //       console.log(response)
-        //       $('#studentaddmodal').modal('hide')
-        //       alert("data saved");
-        //     },
-        //     error: function(error) {
-        //       console.log(error)
-        //       alert("Data not saved");
-        //     }
-        // });
+      //          //$('#'+object.id).attr('data-bs-toggle', 'modal');
+      //         // $('#'+object.id).attr('data-bs-target', '#exampleModal');
+      //       },
+      //       error: function(error) {
+      //         //console.log(error)
+      //         //alert("Data not saved");
+      //       }
+      //   });
 
 
+      // }
 
-      }
+  // function func_emp_modal_info(object){
+
+  //     $.ajax({
+  //        url: 'pages/employee_modal_data.php',
+  //        method: 'POST',
+  //        data: {
+  //           number: '123',
+  //           data: 'pankaj' 
+  //          },
+  //        success: function(data) {
+  //          //console.log(data);
+  //          $("#page_details").html(data);
+  //         }
+  //      });
+  // }
+
+  //  function func_emp_modal_info(object){
+
+  //     let popurl = 'pages/employee_modal_data.php';
+  //     var winpops=window.open(popurl,"","width=730,height=720")
+  //   }
+
+  // $('#txt_emp_code').on('click', function(e){
+  //     e.preventDefault();
+  //       //$('#txt_emp_code').attr('data-bs-toggle', 'modal');
+  //       //$('#txt_emp_code').attr('data-bs-target', '#exampleModal');
+  //     let popurl = 'pages/employee_modal_data.php';
+  //     $('#txt_emp_code').modal('show').load(popurl);
+  //   });
+
+  $('#txt_emp_code').on('click', function(e){
+      e.preventDefault();
+      let popurl = 'pages/employee_modal_data.php';
+      //$('#exampleModal').modal('show').find('.modal-content').load(popurl);
+      $('#exampleModal').modal('show').find('.modal-dialog').load(popurl);
+    });
 </script>
 
 
+<div id="exampleModal" class="modal fade text-center">
+    <div class="modal-dialog">
+      <!-- <div class="modal-content">
+      </div> -->
+    </div>
+</div>
 
 <h2>Employee Profile Information</h2>
 
@@ -75,7 +101,7 @@
     <div class="row">
       <div class="col-sm-12 col-md-6 col-lg input-group mb-2">
         <span class="input-group-text" id="inputGroup-sizing-sm">Emp Code</span>
-        <input type="text" id="txt_emp_code" name="txt_emp_code" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" onclick="func_emp_modal_info(this);">
+        <input type="text" id="txt_emp_code" name="txt_emp_code" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
       </div>
       <div class="col-sm-12 col-md-6 col-lg input-group mb-2">
         <span class="input-group-text" id="inputGroup-sizing-default">Card No</span>
@@ -275,6 +301,7 @@
     </div>
   </form>
 </div>
+
 <script>
   var url = "./assets/js/core/form_design.js";
   $.getScript(url);
