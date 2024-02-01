@@ -16,9 +16,20 @@ $(document).ready(function () {
         
         if(this.getAttribute('href')!="#"){
             $('#main_area').load(this.getAttribute('href'));
+
+            // $(this).attr('href',this.getAttribute('href'));
+            // $(this).attr('target', '_blank');
+
         }
        
     });
+
+    $('#sidebar .nav-link').on('click contextmenu', "a", function(event) {
+        console.log($(this));
+          $(this).attr('href','my_new_url');
+          $(this).attr('target', '_blank');
+    })
+
 
     // Add a click event handler to anchor elements inside the navbar
     $('nav .nav-item').click(function (e) {
@@ -61,28 +72,28 @@ $(document).ready(function () {
         $(this).addClass('active');
     });
 
-    $('#sidebar .nav-item.dropdown').hover(
+    // $('#sidebar .nav-item.dropdown').hover(
 
-        function() {
-            $(this).find('.collapse').addClass('show');
-        },
-        function() {
-            $(this).find('.collapse').removeClass('show');
-        }
+    //     function() {
+    //         $(this).find('.collapse').addClass('show');
+    //     },
+    //     function() {
+    //         $(this).find('.collapse').removeClass('show');
+    //     }
 
-    );
+    // );
     
-    // Enable Bootstrap dropdown on hover
-    $('#sidebar .nav-item.dropdown').hover(
+    // // Enable Bootstrap dropdown on hover
+    // $('#sidebar .nav-item.dropdown').hover(
 
-        function() {
-            $(this).find('.collapse').addClass('show');
-        },
-        function() {
-            $(this).find('.collapse').removeClass('show');
-        }
+    //     function() {
+    //         $(this).find('.collapse').addClass('show');
+    //     },
+    //     function() {
+    //         $(this).find('.collapse').removeClass('show');
+    //     }
 
-    );  
+    // );  
 
 
     // for mobile device on ready function effect
