@@ -24,11 +24,101 @@ $(document).ready(function () {
        
     });
 
-    $('#sidebar .nav-link').on('click contextmenu', "a", function(event) {
-        console.log($(this));
-          $(this).attr('href','my_new_url');
-          $(this).attr('target', '_blank');
-    })
+    // $('#sidebar .nav-link').on('contextmenu', function(e) {
+    //             e.preventDefault();
+                
+    //     var selectedText = window.getSelection().toString().trim();
+    //     //if (selectedText !== '') {
+    //         var newLink = $('<a>', {
+    //             href: 'pages/library.php?selectedText=' + encodeURIComponent(selectedText),
+    //             target: '_blank',
+    //             text: 'Open Link: ' + selectedText,
+    //             css: {
+    //                 color: 'blue'
+    //             }
+    //         });
+    //         console.log(this.getAttribute('href'));
+    //         console.log(newLink);
+    //         $('#main_area').append(newLink);
+
+    //          newLink[0].click();  // Simulate a click on the hidden link
+    //          newLink.remove();
+    //     //}
+    // });
+
+    // $('#sidebar .nav-link').on('click contextmenu', "a", function(event) {
+    //     //console.log($(this));
+    //       //$(this).attr('href','my_new_url');
+    //       this.getAttribute('href')
+    //       $(this).attr('target', '_blank');
+    // })
+
+    // document.addEventListener('contextmenu', function (e) {
+    //     // Prevent the default context menu
+    //     e.preventDefault();
+
+    //     // Open the current page in a new tab
+    //     window.open(window.location.href, '_blank');
+    // });
+
+    // Add a contextmenu event listener to all anchor elements inside the navbar
+    // $('nav .nav-item a').on('contextmenu', function (e) {
+    //     // Prevent the default context menu
+    //     e.preventDefault();
+
+    //     // Open the link in a new tab
+    //     window.open($(this).attr('href'), '_blank');
+    // });
+
+    // $('nav .nav-item a').on('contextmenu', function (e) {
+    //     // Prevent the default context menu
+    //     e.preventDefault();
+
+    //     // Open the link in a new tab
+    //     let pageUrl = $(this).attr('href');
+
+    //     // Perform an AJAX GET request to fetch the content of the page
+    //     $.ajax({
+    //         url: pageUrl,
+    //         type: 'GET',
+    //         success: function (response) {
+    //             // Replace the content of the entire page with the fetched content
+    //             $('#main_area').html(response);
+    //         },
+    //         error: function (error) {
+    //             console.error('Error loading page content:', error);
+    //         }
+    //     });
+    // });
+
+
+
+    $('nav .nav-item a').on('contextmenu', function (e) {
+    // Prevent the default context menu
+    e.preventDefault();
+    //alert($(this).attr('href'))
+    // Open a new tab with the current page URL
+    let newTab = window.open(window.location.href, '_blank');
+
+    // Optionally, you can update the title of the new tab
+    newTab.document.title = 'Copy of ' + document.title;
+
+    $('#main_area').append(this.getAttribute('href'));
+
+    // let pageUrl = $(this).attr('href');
+    // $.ajax({
+    //     url: pageUrl,
+    //     type: 'GET',
+    //     success: function (response) {
+    //         $('#main_area').html(response);
+    //     },
+    //     error: function (error) {
+    //         console.error('Error loading page content:', error);
+    //     }
+    // });
+
+
+});
 
 
     // Add a click event handler to anchor elements inside the navbar
@@ -113,5 +203,7 @@ $(document).ready(function () {
         });
         
     }
+
+
 
  });
