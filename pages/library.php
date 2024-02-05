@@ -61,8 +61,8 @@
 
 
 <script>
-  var url = "./assets/js/core/form_design.js";
-  $.getScript(url);
+  // var url = "./assets/js/core/form_design.js";
+  // $.getScript(url);
 </script>
 
 <script>
